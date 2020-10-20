@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#39ac48",
+    "titleBar.activeBackground": "#39ac48",
+    "titleBar.inactiveBackground": "#39ac48",
+    "statusBar.foreground": "#000",
+    "titleBar.inactiveForeground": "#000",
+    "titleBar.activeForeground": "#000",
+  },
+  "window.title": "FRONTEND - CRYPTO-POCKETBOOK"
+}
