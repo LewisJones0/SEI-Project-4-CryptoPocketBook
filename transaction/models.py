@@ -1,12 +1,12 @@
 from django.db import models
 
 class transaction(models.Model):
-    Bitcoin = 'BTC'
-    Ethereum = 'ETH'
-    Chainlink = 'LINK'
-    Litecoin = 'LTC'
-    Pokadot = 'DOT'
-    YearnFinance = 'YFI'
+    Bitcoin = 'bitcoin'
+    Ethereum = 'ethereum'
+    Chainlink = 'chainlink'
+    Litecoin = 'litecoin'
+    Pokadot = 'pokadot'
+    YearnFinance = 'yearnfinance'
     CURRENCY_CHOICES = [
         (Bitcoin, 'Bitcoin'),
         (Ethereum, 'Ethereum'),
@@ -15,8 +15,8 @@ class transaction(models.Model):
         (Pokadot, 'Pokadot'),
         (YearnFinance, 'YearnFinance'),
     ]
-    Current_Choice = models.CharField(
-        max_length=4,
+    currency = models.CharField(
+        max_length=12,
         choices=CURRENCY_CHOICES,
         default=Bitcoin,
     )

@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'subaccount',
     'transaction',
     'jwt_auth',
-    'currency',
 ]
 
 MIDDLEWARE = [
