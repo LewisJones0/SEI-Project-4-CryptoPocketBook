@@ -9,10 +9,13 @@ from .models import subaccount
 from .serializers.common import SubaccountSerializer
 from .serializers.populated import PopulatedSubaccountSerializer
 
+# from django.contrib.auth import get_user_model
+# User = get_user_model()
+
 class SubaccountListView(APIView):
     ''' Handles all requests to /subaccounts (Get-Index + Post-Create) '''
 
-    def get(self, _request):
+    def get(self, request):
         subaccount_list = subaccount.objects.all()
         serialized_subaccount_list = PopulatedSubaccountSerializer(subaccount_list, many=True)
         return Response(serialized_subaccount_list.data, status=status.HTTP_200_OK)
