@@ -1,7 +1,26 @@
 from django.db import models
 
 class transaction(models.Model):
-    currency = models.CharField(max_length=15, unique=True)
+    Bitcoin = 'BTC'
+    Ethereum = 'ETH'
+    Chainlink = 'LINK'
+    Litecoin = 'LTC'
+    Pokadot = 'DOT'
+    YearnFinance = 'YFI'
+    CURRENCY_CHOICES = [
+        (Bitcoin, 'Bitcoin'),
+        (Ethereum, 'Ethereum'),
+        (Chainlink, 'Chainlink'),
+        (Litecoin, 'Litecoin'),
+        (Pokadot, 'Pokadot'),
+        (YearnFinance, 'YearnFinance'),
+    ]
+    Current_Choice = models.CharField(
+        max_length=4,
+        choices=CURRENCY_CHOICES,
+        default=Bitcoin,
+    )
+
     amount_bought = models.PositiveIntegerField()
     price_bought_at = models.PositiveIntegerField()
     date_bought_at = models.PositiveIntegerField()
