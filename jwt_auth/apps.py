@@ -1,3 +1,4 @@
+# pylint: disable=no-name-in-module, import-error
 from django.apps import AppConfig
 
 
