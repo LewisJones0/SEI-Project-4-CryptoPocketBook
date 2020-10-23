@@ -1,5 +1,6 @@
 # pylint: disable=no-name-in-module, import-error
-from django.db import models
+from django.db import models 
+from datetime import datetime
 
 class transaction(models.Model):
     Bitcoin = 'bitcoin'
@@ -24,15 +25,15 @@ class transaction(models.Model):
 
     amount_bought = models.PositiveIntegerField()
     price_bought_at = models.PositiveIntegerField()
-    date_bought_at = models.PositiveIntegerField()
+    date_bought_at = models.DateField(default=datetime.now)
     subaccountowner = models.ForeignKey(
         'subaccount.subaccount',
-        related_name="subaccountid",
+        related_name="transactions",
         on_delete=models.CASCADE
     )
     owner = models.ForeignKey(
         'jwt_auth.User',
-        related_name="subaccountid",
+        related_name="owner_transactions",
         on_delete=models.CASCADE
     )
 

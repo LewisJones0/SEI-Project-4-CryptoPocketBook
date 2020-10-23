@@ -5,7 +5,7 @@ class subaccount(models.Model):
     name = models.CharField(max_length=15)
     owner = models.ForeignKey(
         'jwt_auth.User',
-        related_name="subaccount_owner",
+        related_name="subaccounts",
         on_delete=models.CASCADE
     )
 
