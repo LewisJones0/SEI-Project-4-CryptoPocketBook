@@ -1,3 +1,4 @@
+# pylint: disable=no-name-in-module, import-error
 from django.db import models
 
 class transaction(models.Model):
@@ -29,7 +30,7 @@ class transaction(models.Model):
         related_name="subaccountid",
         on_delete=models.CASCADE
     )
-    ownerID = models.ForeignKey(
+    owner = models.ForeignKey(
         'jwt_auth.User',
         related_name="subaccountid",
         on_delete=models.CASCADE
