@@ -4,5 +4,5 @@ from .views import SubaccountTransactions
 
 urlpatterns = [
     path('', SubaccountTransactions.as_view()),
-    path('<int:pk>/', SubaccountTransactions.as_view())
+    # path('<int:pk>/', SubaccountTransactions.as_view())
 ]

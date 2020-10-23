@@ -24,8 +24,13 @@ class transaction(models.Model):
     amount_bought = models.PositiveIntegerField()
     price_bought_at = models.PositiveIntegerField()
     date_bought_at = models.PositiveIntegerField()
-    owner = models.ForeignKey(
+    subaccountowner = models.ForeignKey(
         'subaccount.subaccount',
+        related_name="subaccountid",
+        on_delete=models.CASCADE
+    )
+    ownerID = models.ForeignKey(
+        'jwt_auth.User',
         related_name="subaccountid",
         on_delete=models.CASCADE
     )
