@@ -14,7 +14,7 @@ export const registerUser = formData => {
   return axios.post(`${baseUrl}/register`, formData)
 }
 export const loginUser = formData => {
-  return axios.post(`${baseUrl}/login`, formData)
+  return axios.post(`${baseUrl}/auth/login/`, formData)
 }
 export const getSingleUser = ( userId ) => {
   return axios.get(`${baseUrl}/users/${userId}`)

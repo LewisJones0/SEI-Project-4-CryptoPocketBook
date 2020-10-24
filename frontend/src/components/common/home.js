@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Jumbotron, Button, Container } from 'react-bootstrap'
+import { Jumbotron, Container } from 'react-bootstrap'
 
 
 const Home = () => {
