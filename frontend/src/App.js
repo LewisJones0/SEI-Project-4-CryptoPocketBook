@@ -14,11 +14,12 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <NavbarMaster />
+        <NavbarMaster>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/dashboard" component={Dashboard}/>
         </Switch>
+        </NavbarMaster>
+          <Route path="/dashboard" component={Dashboard}/>
       </BrowserRouter>
     )
   }

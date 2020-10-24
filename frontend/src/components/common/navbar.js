@@ -1,9 +1,10 @@
 import React from 'react'
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import { logoutToken, isAuthenticated } from '../../lib/auth'
 import Login from '../auth/login'
 import Register from '../auth/login'
+import Sidebar from './sidebar'
 
 class NavbarMaster extends React.Component {
   state = {
@@ -43,6 +44,7 @@ class NavbarMaster extends React.Component {
   render() {
     return (
       <>
+      { !isAuthenticated() && 
       <Navbar className="color-nav" expand="lg">
         <Navbar.Brand href="/">
           Crypto Pocketbook
@@ -62,6 +64,17 @@ class NavbarMaster extends React.Component {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      }
+      { isAuthenticated() && 
+        <Container fluid>
+        <Row>
+            <Col xs={2} id="sidebar-wrapper">      
+              <Sidebar />
+              {/* <Nav.Link href="/" onClick={this.handleLogout}>Logout</Nav.Link>  */}
+            </Col>
+        </Row>
+    </Container>
+      }
       </>
     )
   }
