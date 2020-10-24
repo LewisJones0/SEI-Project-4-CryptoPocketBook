@@ -4,7 +4,7 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap'
 import { loginUser } from '../../lib/api'
 import { setToken } from '../../lib/auth'
 
-import {withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
   state = {
@@ -29,6 +29,8 @@ class Login extends React.Component {
       console.log(response)
       setToken(response.data.token)
       this.props.history.push('/dashboard')
+      this.props.closeModal(this.state.show)
+      this.setState({show: false})
       } catch (err) {
       this.setState({ errors: err.response.data.errors })
     }

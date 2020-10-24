@@ -9,9 +9,6 @@ import Dashboard from './components/dashboard/dashboard'
 // import Register from './components/auth/register'
 // import Login from './components/auth/login'
 
-
-// import Footer from './components/common/footer'
-
 class App extends React.Component {
   
   render() {
@@ -21,7 +18,6 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/dashboard" component={Dashboard}/>
-          {/* <Route path="/login" component={Login}/> */}
         </Switch>
       </BrowserRouter>
     )
