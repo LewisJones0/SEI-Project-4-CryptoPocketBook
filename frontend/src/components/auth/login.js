@@ -1,10 +1,10 @@
-import React from "react";
-import Modal from "react-bootstrap/Modal";
+import React from 'react'
+import Modal from 'react-bootstrap/Modal'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
 import { loginUser } from '../../lib/api'
 import { setToken } from '../../lib/auth'
 
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 
 class Login extends React.Component {
   state = {
@@ -30,8 +30,8 @@ class Login extends React.Component {
       setToken(response.data.token)
       this.props.history.push('/dashboard')
       this.props.closeModal(this.state.show)
-      this.setState({show: false})
-      } catch (err) {
+      this.setState({ show: false })
+    } catch (err) {
       this.setState({ errors: err.response.data.errors })
     }
   }
@@ -40,11 +40,11 @@ class Login extends React.Component {
   render() {
     const { email, password } = this.state.formData
     if (!this.props.show) {
-      return null;
+      return null
     }
     return (
-    <Modal show={true}>
-      <Container className="login-reg-wrapper">
+      <Modal show={true}>
+        <Container className="login-reg-wrapper">
           <Row>
             <Col className="login-reg-section">
               <h3>Sign in</h3>
@@ -81,9 +81,9 @@ class Login extends React.Component {
                 </Form>
               </div>
             </Col>
-            </Row>
+          </Row>
         </Container> 
-    </Modal>
+      </Modal>
     )
   }
 }

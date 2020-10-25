@@ -44,7 +44,7 @@ class NavbarMaster extends React.Component {
   render() {
     return (
       <>
-      { !isAuthenticated() && 
+        { !isAuthenticated() && 
       <Navbar className="color-nav" expand="lg">
         <Navbar.Brand href="/">
           Crypto Pocketbook
@@ -53,10 +53,14 @@ class NavbarMaster extends React.Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
 
-            {!isAuthenticated() && <button onClick={e => {this.showModal()}}>Login</button>}
+            {!isAuthenticated() && <button onClick={e => {
+              this.showModal()
+            }}>Login</button>}
             <Login show={this.state.show} closeModal={this.closeModal}/>
 
-            {!isAuthenticated() && <button onClick={e => {this.showModal1()}}>Register</button>}
+            {!isAuthenticated() && <button onClick={e => {
+              this.showModal1()
+            }}>Register</button>}
             <Register show1={this.state.show1} closeModal1={this.closeModal1}/>
 
             { isAuthenticated() && <Nav.Link href="/profile">Profile</Nav.Link> }
@@ -64,17 +68,17 @@ class NavbarMaster extends React.Component {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      }
-      { isAuthenticated() && 
+        }
+        { isAuthenticated() && 
         <Container fluid>
-        <Row>
-            <Col xs={2} id="sidebar-wrapper">      
+          <Row>
+            <Col xs={'auto'} id="sidebar-wrapper">      
               <Sidebar />
               {/* <Nav.Link href="/" onClick={this.handleLogout}>Logout</Nav.Link>  */}
             </Col>
-        </Row>
-    </Container>
-      }
+          </Row>
+        </Container>
+        }
       </>
     )
   }
