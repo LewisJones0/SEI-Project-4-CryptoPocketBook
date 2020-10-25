@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { logoutToken, isAuthenticated } from '../../lib/auth'
 import Login from '../auth/login'
 import Register from '../auth/login'
-import Sidebar from './sidebar'
+import Sidebar from './sidebar.js'
 
 class NavbarMaster extends React.Component {
   state = {

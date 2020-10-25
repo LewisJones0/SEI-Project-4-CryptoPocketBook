@@ -1,30 +1,68 @@
-import React from "react";
-import { Nav } from "react-bootstrap";
-import { withRouter } from "react-router";
+import React from 'react'
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav'
+import { withRouter } from 'react-router-dom'
+import { logoutID, logoutToken } from '../../lib/auth'
+import { Book, Power, Receipt } from 'react-bootstrap-icons'
+// Be sure to include styles at some point, probably during your bootstraping
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
-const Side = props => {
+class Sidebar extends React.Component {
 
 
+
+  handleLogout = () => {
+    logoutID()
+    logoutToken()
+    this.props.history.push('/')
+  }
+
+  render() {
     return (
-        <>
-            <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
-            activeKey="/home"
-            onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-            >
-                <div className="sidebar-sticky"></div>
-            <Nav.Item>
-                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="link-1">Link</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="link-2">Link</Nav.Link>
-            </Nav.Item>
-            </Nav>
+      <SideNav>
+          <SideNav.Toggle />
+          <SideNav.Nav defaultSelected="home">
+              <NavItem eventKey="home">
+                  <NavIcon>
+                    <Book className="DashboardIcons" size={30}/>
+                      <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                  </NavIcon>
+                  <NavText>
+                      Dashboard
+                  </NavText>
+              </NavItem>
+              <NavItem eventKey="subaccounts">
+                  <NavIcon>
+                  <Receipt className="DashboardIcons" size={30}/>
+                      <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                  </NavIcon>
+                  <NavText>
+                    Subaccounts
+                  </NavText>
+                  <NavItem eventKey="charts/linechart">
+                      <NavText>
+                          Line Chart
+                      </NavText>
+                  </NavItem>
+                  <NavItem eventKey="charts/barchart">
+                      <NavText>
+                          Bar Chart
+                      </NavText>
+                  </NavItem>
+              </NavItem>
+              <br></br>
+              <NavItem eventKey="charts" onClick={this.handleLogout}>
+                  <NavIcon onClick={this.handleLogout} >
+                      <Power className="DashboardIcons" size={30}/>
+                      <i className="fa fa-fw fa-chart" style={{ fontSize: '1.75em' }} />
+                  </NavIcon>
+                  <NavText onClick={this.handleLogout}>
+                      Logout
+                  </NavText>
+              </NavItem>
+          </SideNav.Nav>
+      </SideNav>
+    )
+  }
+}
 
-        </>
-        );
-  };
-  const Sidebar = withRouter(Side);
-  export default Sidebar
+export default withRouter(Sidebar)

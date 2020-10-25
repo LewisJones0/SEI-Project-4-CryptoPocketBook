@@ -1,6 +1,7 @@
 // HOME
 .jumbotron {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://cdn.wallpapersafari.com/98/18/sfD3Xc.jpg');
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-color: orange;
   background-size: cover;
   background-position: bottom;
   width: 100%;
@@ -10,7 +11,7 @@
 }
 
 .hero {
-  color: white;
+  color: orange;
 }
 
 //LOGIN
@@ -22,6 +23,8 @@
 }
 
 
+
+// SIDE BAR NAVIGATION
 .logged-in-bar {
   position: fixed;
   top: 0;
@@ -33,6 +36,7 @@
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 #sidebar-wrapper{
+  position: fixed;
   color: orange;
   min-height: 100vh !important;
   width: 100vw;
@@ -43,7 +47,7 @@
   transition: margin .25s ease-out;
 }
 #sidebar-wrapper .sidebar-heading {
-  color: red;
+  color: orange;
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
 }
@@ -51,4 +55,14 @@
 #page-content-wrapper {
   min-width: 0;
   width: 100%;
+}
+
+.DashboardIcons {
+  margin-bottom: 17.5%;
+  margin-left: 10%;
+}
+
+.DashboardMain {
+  background-color: orange;
+  z-index: 999;
 }
