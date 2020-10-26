@@ -1,6 +1,6 @@
 import React from 'react'
 import { getUser } from '../../lib/api'
-import { Container, Row, Col, Table } from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 
 class CurrencyTracker extends React.Component {
   state = {
@@ -23,7 +23,7 @@ class CurrencyTracker extends React.Component {
         <thead>
           <tr>
             <th>Currency</th>
-            <th>Amount in Possention</th>
+            <th>Amount in Possession</th>
             <th>Average Price Bought At</th>
             <th>Price Now</th>
             <th>PnL</th>

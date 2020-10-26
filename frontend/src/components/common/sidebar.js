@@ -2,7 +2,7 @@ import React from 'react'
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav'
 import { withRouter } from 'react-router-dom'
 import { logoutID, logoutToken } from '../../lib/auth'
-import { Book, Power, Receipt } from 'react-bootstrap-icons'
+import { Book, Power, Receipt, Plus } from 'react-bootstrap-icons'
 import { getUser } from '../../lib/api'
 import '../../styles/sidenav.scss'
 
@@ -38,56 +38,51 @@ class Sidebar extends React.Component {
     this.props.history.push('/')
   }
 
+  handleSubaccount = () => {
+    this.props.history.push('/subaccount')
+  }
+
+  handleSubaccountCreation = () => {
+    this.props.history.push('/subaccount/create')
+  }
+
+  handleDashboard = () => {
+    this.props.history.push('/dashboard')
+  }
   render() {
     // const { subaccounts } = this.state.subaccounts
     return (
       <SideNav>
         <SideNav.Toggle />
         <SideNav.Nav defaultSelected="home">
-          <NavItem eventKey="home">
-            <NavIcon>
+          <NavItem eventKey="home" onClick={this.handleDashboard}>
+            <NavIcon onClick={this.handleDashboard}>
               <Book className="DashboardIcons" size={30}/>
               <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
-            <NavText>
+            <NavText onClick={this.handleDashboard}>
                   Dashboard
             </NavText>
           </NavItem>
-          <NavItem eventKey="subaccounts">
-            <NavIcon>
+          <NavItem eventKey="subaccounts" onClick={this.handleSubaccount}>
+            <NavIcon onClick={this.handleSubaccount}>
               <Receipt className="DashboardIcons" size={30}/>
               <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
             </NavIcon>
-            <NavText>
+            <NavText onClick={this.handleSubaccount}>
                 Subaccounts
             </NavText>
-            <NavItem eventKey="subaccounts">
-              <NavIcon>
-                <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
-              </NavIcon>
-              <NavText>
-                  Charts
-              </NavText>
-              {/* <Row xs={1} xl={3}>
-                {subaccounts.map(subaccount => (
-                  <div
-                    key={subaccounts._id}
-                    {...subaccounts}></div>
-                ))}
-              </Row> */}
-            </NavItem>
           </NavItem>
-          <br></br>
 
-          {/* <NavItem eventKey="createSub" onClick={this.showModal}>
-            <NavIcon onClick={this.showModal} >
+          <NavItem eventKey="createSub" onClick={this.handleSubaccountCreation}>
+            <NavIcon onClick={this.handleSubaccountCreation} >
               <Plus className="DashboardIcons" size={30}/>
               <i className="fa fa-fw fa-createSub" style={{ fontSize: '1.75em' }} />
             </NavIcon>
-            <NewSubaccount onClick={this.showModal}>
-                  New Subaccount
-            </NewSubaccount>
-          </NavItem> */}
+            <NavText onClick={this.handleLogout}>
+                New Subaccount
+            </NavText>
+          </NavItem>
 
           <br></br>
 

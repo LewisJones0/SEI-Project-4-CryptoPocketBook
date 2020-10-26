@@ -1,7 +1,7 @@
 import React from 'react'
 import { getUser } from '../../lib/api'
 
-class Subaccount extends React.Component {
+class SubaccountCreate extends React.Component {
   state = {
     profile: {},
     subaccounts: {}
@@ -24,4 +24,4 @@ class Subaccount extends React.Component {
   }
 }
 
-export default Subaccount
+export default SubaccountCreate

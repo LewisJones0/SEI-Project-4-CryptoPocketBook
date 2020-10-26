@@ -52,7 +52,6 @@ class NavbarMaster extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-
             {!isAuthenticated() && <button onClick={e => {
               this.showModal()
             }}>Login</button>}
@@ -62,9 +61,6 @@ class NavbarMaster extends React.Component {
               this.showModal1()
             }}>Register</button>}
             <Register show1={this.state.show1} closeModal1={this.closeModal1}/>
-
-            { isAuthenticated() && <Nav.Link href="/profile">Profile</Nav.Link> }
-            { isAuthenticated() && <Nav.Link href="/" onClick={this.handleLogout}>Logout</Nav.Link> }
           </Nav>
         </Navbar.Collapse>
       </Navbar>
