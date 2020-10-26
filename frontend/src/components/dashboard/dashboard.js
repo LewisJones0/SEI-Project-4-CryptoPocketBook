@@ -1,9 +1,9 @@
 import React from 'react'
 import { getUser } from '../../lib/api'
-import { Container, Card } from 'react-bootstrap'
+import { Container, Card, Grid, Col, Row } from 'react-bootstrap'
 import Widget from './tradingview'
-import LineChart from '../d3/linechart'
-
+// import LineChart from '../d3/linechart'
+import CurrencyTracker from './currencytracker'
 class Dashboard extends React.Component {
   state = {
     profile: {},
@@ -26,26 +26,18 @@ class Dashboard extends React.Component {
     // const { transactions } = this.state.transactions
     return (
       <>
-        <Container xs={1} md={2} xl={2}  className="DashboardMain">
-          <Container className="LineGraph">
-            <Card>
-              <LineChart/>
-            </Card>
-          </Container>
-
-          <Container className="WidgetContainer">
-            <Card ClassName="WidgetCard">
-              <Widget />
-            </Card>
-          </Container>
-
-          <Container className="CurrencyTracker">
-            <Card>
-              <Widget />
-            </Card>
-          </Container>
-
-        </Container>
+        <Row className="Dashboard">
+          {/* <Col xs={2} md={8} xl={12} className="WidgetRow"> */}
+            <CurrencyTracker />
+          {/* </Col> */}
+          <Col xs={2} md={8} xl={12} className="WidgetRow">
+            <Container className="WidgetContainer">
+              <Card ClassName="WidgetCard">
+                <Widget />
+              </Card>
+            </Container>
+          </Col>
+        </Row>
       </>
     )
   }

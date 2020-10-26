@@ -92,9 +92,22 @@
 
 .WidgetContainer {
   width: 35%;
-  height: 150%;
 }
 
-// .WidgetCard {
-//   height: 150%
-// }
+.WidgetRow {
+  height: 100%;
+}
+
+.Linegraph {
+  width: 100%;
+  background-color: white;
+}
+
+.Dashboard {
+  background-color: #363A45;
+  height: 100%;
+}
+
+.Dashboard-row {
+  border-style: solid;
+}

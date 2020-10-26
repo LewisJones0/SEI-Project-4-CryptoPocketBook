@@ -14,18 +14,18 @@ class LineChart extends Component {
     this.state = {
       transactions: {},
       data: [
-        { name: 'Jan', value: 30 },
-        { name: 'Feb', value: 10 },
-        { name: 'Mar', value: 50 },
-        { name: 'Apr', value: 20 },
-        { name: 'May', value: 80 },
-        { name: 'Jun', value: 30 },
-        { name: 'July', value: 0 },
-        { name: 'Aug', value: 20 },
-        { name: 'Sep', value: 100 },
-        { name: 'Oct', value: 55 },
-        { name: 'Nov', value: 60 },
-        { name: 'Dec', value: 80 }
+        { name: 'Jan', value: 100 },
+        { name: 'Feb', value: 200 },
+        { name: 'Mar', value: 300 },
+        { name: 'Apr', value: 400 },
+        { name: 'May', value: 450 },
+        { name: 'Jun', value: 300 },
+        { name: 'July', value: 500 },
+        { name: 'Aug', value: 300 },
+        { name: 'Sep', value: 600 },
+        { name: 'Oct', value: 800 },
+        { name: 'Nov', value: 1000 },
+        { name: 'Dec', value: 1400 }
       ]
     }
   }
@@ -84,7 +84,6 @@ class LineChart extends Component {
 
     return (
       <div>
-        <button onClick={this.randomData}>Randomize data</button>
         <svg
           className="lineChartSvg"
           width={width + margins.left + margins.right}
