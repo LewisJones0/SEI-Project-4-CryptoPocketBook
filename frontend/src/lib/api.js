@@ -21,3 +21,8 @@ export const loginUser = formData => {
 export const getUser = () => {
   return axios.get(`${baseUrl}/auth/profile`, withHeaders())
 }
+
+// ADD NEW SUBACCOUNT
+export const newSub = formData => {
+  return axios.post(`${baseUrl}/subaccount/`, withHeaders())
+}

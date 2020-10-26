@@ -7,7 +7,8 @@ import LineChart from '../d3/linechart'
 class Dashboard extends React.Component {
   state = {
     profile: {},
-    subaccounts: {}
+    subaccounts: {},
+    transactions: {}
   }
 
   async componentDidMount() {
@@ -15,18 +16,20 @@ class Dashboard extends React.Component {
     console.log(getData)
     this.setState({
       profile: getData.data,
-      subaccounts: getData.data.subaccounts
+      subaccounts: getData.data.subaccounts,
+      transactions: getData.data.owner_transactions
     })
   }
 
 
   render() {
+    // const { transactions } = this.state.transactions
     return (
       <>
         <Container xs={1} md={2} xl={2}  className="DashboardMain">
           <Container className="LineGraph">
             <Card>
-              <LineChart />
+              <LineChart/>
             </Card>
           </Container>
 

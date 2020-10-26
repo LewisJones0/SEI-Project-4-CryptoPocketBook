@@ -58,11 +58,11 @@ class Line extends React.Component {
       .transition(t)
       .attr('d', lineGenerator)
 
-    // dot
-    //   .data(data)
-    //   .transition(t)
-    //   .attr('cx', (d, key) => xScale(key))
-    //   .attr('cy', d => yScale(d.count))
+    dot
+      .data(data)
+      .transition(t)
+      .attr('cx', (d, key) => xScale(key))
+      .attr('cy', d => yScale(d.count))
   }
   render() {
     return <g className="line-group" ref={this.ref} />

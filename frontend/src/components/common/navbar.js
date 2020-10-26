@@ -74,7 +74,6 @@ class NavbarMaster extends React.Component {
           <Row>
             <Col xs={'auto'} id="sidebar-wrapper">      
               <Sidebar />
-              {/* <Nav.Link href="/" onClick={this.handleLogout}>Logout</Nav.Link>  */}
             </Col>
           </Row>
         </Container>

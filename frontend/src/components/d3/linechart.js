@@ -6,11 +6,13 @@ import Line from './line/line'
 import { line, curveMonotoneX } from 'd3-shape'
 import { extent } from 'd3-array'
 import { transition } from 'd3-transition'
+import { getUser } from '../../lib/api'
 
 class LineChart extends Component {
   constructor() {
     super()
     this.state = {
+      transactions: {},
       data: [
         { name: 'Jan', value: 30 },
         { name: 'Feb', value: 10 },
@@ -27,6 +29,16 @@ class LineChart extends Component {
       ]
     }
   }
+
+  async componentDidMount() {
+    const getData = await getUser()
+    console.log(getData)
+    this.setState({
+      transactions: getData.data.owner_transactions
+    })
+  }
+
+  
   randomData = (e) => {
     e.preventDefault()
     this.setState((prevState) => {

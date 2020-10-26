@@ -2,15 +2,18 @@ import React from 'react'
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav'
 import { withRouter } from 'react-router-dom'
 import { logoutID, logoutToken } from '../../lib/auth'
-import { Book, Power, Receipt } from 'react-bootstrap-icons'
+import { Book, Power, Receipt, Plus } from 'react-bootstrap-icons'
 import { getUser } from '../../lib/api'
+import NewSubaccount  from './newsubaccount'
+
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 // import { Container, Row, Form, Spinner } from 'react-bootstrap'
 
 class Sidebar extends React.Component {
   state = {
-    subaccounts: {}
+    subaccounts: {},
+    show: false
   }
 
   async componentDidMount() {
@@ -18,6 +21,18 @@ class Sidebar extends React.Component {
     console.log(getData)
     this.setState({
       subaccounts: getData.data.subaccounts
+    })
+  }
+
+  showModal = e => {
+    this.setState({
+      show: true
+    })
+  }
+
+  closeModal = e => {
+    this.setState({
+      show: false
     })
   }
 
@@ -50,7 +65,7 @@ class Sidebar extends React.Component {
             <NavText>
                 Subaccounts
             </NavText>
-            <NavItem eventKey="charts">
+            <NavItem eventKey="subaccounts">
               <NavIcon>
                 <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
               </NavIcon>
@@ -67,10 +82,31 @@ class Sidebar extends React.Component {
             </NavItem>
           </NavItem>
           <br></br>
-          <NavItem eventKey="charts" onClick={this.handleLogout}>
+
+
+
+            {/* <Subaccount show={this.state.show} closeModal={this.closeModal}></Subaccount> */}
+
+
+
+
+
+          {/* <NavItem eventKey="createSub" onClick={this.showModal}>
+            <NavIcon onClick={this.showModal} >
+              <Plus className="DashboardIcons" size={30}/>
+              <i className="fa fa-fw fa-createSub" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NewSubaccount onClick={this.showModal}>
+                  New Subaccount
+            </NewSubaccount>
+          </NavItem> */}
+
+          <br></br>
+
+          <NavItem eventKey="logout" onClick={this.handleLogout}>
             <NavIcon onClick={this.handleLogout} >
               <Power className="DashboardIcons" size={30}/>
-              <i className="fa fa-fw fa-chart" style={{ fontSize: '1.75em' }} />
+              <i className="fa fa-fw fa-logout" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText onClick={this.handleLogout}>
                   Logout
