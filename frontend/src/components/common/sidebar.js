@@ -8,18 +8,9 @@ import '../../styles/sidenav.scss'
 
 class Sidebar extends React.Component {
   state = {
-    subaccounts: {},
     show: false
   }
-
-  async componentDidMount() {
-    const getData = await getUser()
-    console.log(getData)
-    this.setState({
-      subaccounts: getData.data.subaccounts
-    })
-  }
-
+  
   showModal = e => {
     this.setState({
       show: true
@@ -43,7 +34,7 @@ class Sidebar extends React.Component {
   }
 
   handleSubaccountCreation = () => {
-    this.props.history.push('/subaccount/create')
+    this.props.history.push('/create/')
   }
 
   handleDashboard = () => {
@@ -57,7 +48,7 @@ class Sidebar extends React.Component {
         <SideNav.Nav defaultSelected="home">
           <NavItem eventKey="home" onClick={this.handleDashboard}>
             <NavIcon onClick={this.handleDashboard}>
-              <Book className="DashboardIcons" size={30}/>
+              <Book className="DashboardIcons" size={30} onClick={this.handleDashboard}/>
               <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText onClick={this.handleDashboard}>
@@ -66,7 +57,7 @@ class Sidebar extends React.Component {
           </NavItem>
           <NavItem eventKey="subaccounts" onClick={this.handleSubaccount}>
             <NavIcon onClick={this.handleSubaccount}>
-              <Receipt className="DashboardIcons" size={30}/>
+              <Receipt className="DashboardIcons" size={30} onClick={this.handleSubaccount}/>
               <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText onClick={this.handleSubaccount}>
@@ -76,10 +67,10 @@ class Sidebar extends React.Component {
 
           <NavItem eventKey="createSub" onClick={this.handleSubaccountCreation}>
             <NavIcon onClick={this.handleSubaccountCreation} >
-              <Plus className="DashboardIcons" size={30}/>
+              <Plus className="DashboardIcons" size={30} onClick={this.handleSubaccountCreation}/>
               <i className="fa fa-fw fa-createSub" style={{ fontSize: '1.75em' }} />
             </NavIcon>
-            <NavText onClick={this.handleLogout}>
+            <NavText onClick={this.handleSubaccountCreation}>
                 New Subaccount
             </NavText>
           </NavItem>
@@ -88,7 +79,7 @@ class Sidebar extends React.Component {
 
           <NavItem eventKey="logout" onClick={this.handleLogout}>
             <NavIcon onClick={this.handleLogout} >
-              <Power className="DashboardIcons" size={30}/>
+              <Power className="DashboardIcons" size={30} onClick={this.handleLogout}/>
               <i className="fa fa-fw fa-logout" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText onClick={this.handleLogout}>

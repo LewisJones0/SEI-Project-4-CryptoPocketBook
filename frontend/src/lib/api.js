@@ -24,5 +24,6 @@ export const getUser = () => {
 
 // ADD NEW SUBACCOUNT
 export const newSub = formData => {
-  return axios.post(`${baseUrl}/subaccount/`, withHeaders())
+  return axios.post(`${baseUrl}/subaccount/`, formData, withHeaders())
 }
+

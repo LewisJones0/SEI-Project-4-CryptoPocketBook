@@ -31,16 +31,12 @@ class Dashboard extends React.Component {
         </Container>
         <Row className="Dashboard">
           <Col xs={12} md={12} xl={12} className="WidgetRow">
-          <Card className="CurrencyTracker">
-            <CurrencyTracker />
-          </Card>
-          <Col className="WidgetRow">
-            {/* <Container className="WidgetContainer"> */}
-              {/* <Card ClassName="WidgetCard"> */}
-                <Widget />
-          </Col>
-              {/* </Card> */}
-            {/* </Container> */}
+            <Card className="CurrencyTracker">
+              <CurrencyTracker />
+            </Card>
+            <Col className="WidgetRow">
+              <Widget />
+            </Col>
           </Col>
         </Row>
       </>

@@ -19,7 +19,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/dashboard" component={Dashboard}/>
           <Route path="/subaccount/" component={Subaccount}/>
-          <Route path="/subaccount/create" component={SubaccountCreate}/>
+          <Route path="/create/" component={SubaccountCreate}/>
         </Switch>
       </BrowserRouter>
     )

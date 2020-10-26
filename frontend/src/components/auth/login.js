@@ -71,7 +71,7 @@ class Login extends React.Component {
                     <Col sm={8}>
                       <Form.Control 
                         type="password" 
-                        placeholder="Password"                       
+                        placeholder="Password"
                         name="password"
                         value={password}
                         onChange={this.handleChange} />

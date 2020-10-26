@@ -95,10 +95,11 @@
 }
 
 .WidgetRow {
-  margin-top: 1.5%;
+  margin-top: 0.5%;
   margin-left: 4%;
   position: relative;
   z-index: 9998;
+  padding-bottom: 1%;
 }
 
 .Linegraph {
@@ -143,3 +144,54 @@
   //     z-index: -1;
   //   }
   //   }
+
+  // .CreateSubHero {
+  //   background-color: #363A45;
+  //   // height: 878px;
+  //   display: flex;
+  //   justify-content: center;
+  //   // z-index: 9999;
+  // }
+
+  .CreateFormRow {
+    margin-top: 0.5%;
+    margin-left: 4%;
+    position: relative;
+    z-index: 9998;
+    padding-bottom: 1%;
+    height: 845px;
+  }
+
+  .CreateSubAccount {
+    padding-right: 7%;
+    background-color: #363A45;
+    width: 30%;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 800px) {
+    .CreateSubAccount{
+      width: 50%;
+    }
+    .SAFormTitle {
+      height: 250px;
+    }
+    }
+
+
+  .SAFormTitle {
+    margin-top: 15%;
+    height: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/backgroundimghome.jpg');
+    border: #363A45;
+    color: white;
+    text-align: center;
+  }
+
+  .card {
+  border: #363A45;
+  }
+
+  .SAFormControl {
+    margin-top: 2.5%;
+  }
