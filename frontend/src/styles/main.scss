@@ -61,7 +61,7 @@
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
-  z-index: 9999;
+  z-index: 9997;
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -95,7 +95,10 @@
 }
 
 .WidgetRow {
-  height: 100%;
+  margin-top: 1.5%;
+  margin-left: 4%;
+  position: relative;
+  z-index: 9998;
 }
 
 .Linegraph {
@@ -108,6 +111,20 @@
   height: 100%;
 }
 
-.Dashboard-row {
-  border-style: solid;
+.CurrencyTracker {
+  margin-left: 5%;
+  margin-right: 10%;
+  background-color: #363A45;
+}
+
+.pocketbook-banner {
+  margin-left: 0.75%;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/backgroundimghome.jpg');
+  background-size: auto;
+  background-position: bottom;
+  position: relative;
+  text-align: center;
+  color: white;
 }

@@ -2,13 +2,9 @@ import React from 'react'
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav'
 import { withRouter } from 'react-router-dom'
 import { logoutID, logoutToken } from '../../lib/auth'
-import { Book, Power, Receipt, Plus } from 'react-bootstrap-icons'
+import { Book, Power, Receipt } from 'react-bootstrap-icons'
 import { getUser } from '../../lib/api'
-import NewSubaccount  from './newsubaccount'
-
-// Be sure to include styles at some point, probably during your bootstraping
-import '@trendmicro/react-sidenav/dist/react-sidenav.css'
-// import { Container, Row, Form, Spinner } from 'react-bootstrap'
+import '../../styles/sidenav.scss'
 
 class Sidebar extends React.Component {
   state = {
@@ -82,14 +78,6 @@ class Sidebar extends React.Component {
             </NavItem>
           </NavItem>
           <br></br>
-
-
-
-            {/* <Subaccount show={this.state.show} closeModal={this.closeModal}></Subaccount> */}
-
-
-
-
 
           {/* <NavItem eventKey="createSub" onClick={this.showModal}>
             <NavIcon onClick={this.showModal} >

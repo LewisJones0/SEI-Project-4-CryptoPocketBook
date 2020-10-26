@@ -26,16 +26,21 @@ class Dashboard extends React.Component {
     // const { transactions } = this.state.transactions
     return (
       <>
+        <Container fluid className="pocketbook-banner">
+          <h1>Dashboard</h1>
+        </Container>
         <Row className="Dashboard">
-          {/* <Col xs={2} md={8} xl={12} className="WidgetRow"> */}
+          <Col xs={12} md={12} xl={12} className="WidgetRow">
+          <Card className="CurrencyTracker">
             <CurrencyTracker />
-          {/* </Col> */}
-          <Col xs={2} md={8} xl={12} className="WidgetRow">
-            <Container className="WidgetContainer">
-              <Card ClassName="WidgetCard">
+          </Card>
+          <Col className="WidgetRow">
+            {/* <Container className="WidgetContainer"> */}
+              {/* <Card ClassName="WidgetCard"> */}
                 <Widget />
-              </Card>
-            </Container>
+          </Col>
+              {/* </Card> */}
+            {/* </Container> */}
           </Col>
         </Row>
       </>

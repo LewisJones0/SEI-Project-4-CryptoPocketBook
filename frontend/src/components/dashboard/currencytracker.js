@@ -19,7 +19,7 @@ class CurrencyTracker extends React.Component {
 
   render() {
     return (
-        <Table striped bordered hover variant="dark">
+      <Table striped bordered hover variant="dark">
         <thead>
           <tr>
             <th>Currency</th>
@@ -52,14 +52,14 @@ class CurrencyTracker extends React.Component {
             <td>@mdo</td>
           </tr>
           <tr>
-            <td>1</td>
+            <td>LiteCoin</td>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
             <td>@mdo</td>
           </tr>
           <tr>
-            <td>1</td>
+            <td>YearnFinance</td>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>

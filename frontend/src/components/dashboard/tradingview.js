@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { TradingViewEmbed, widgetType } from 'react-tradingview-embed'
 
 
@@ -7,7 +6,6 @@ export default function Widget() {
   return (
     <div
       className="App"
-      // style={{background: "rgba(0, 0, 0, 0.85)"}}
     >
       <TradingViewEmbed
         widgetType={widgetType.MARKET_OVERVIEW}
@@ -17,8 +15,8 @@ export default function Widget() {
           showChart: true,
           isTransparent: false,
           showSymbolLogo: true,
-          width: '100%',
-          height: '100%',
+          width: '93%',
+          height: '550',
           tabs: [
             {
               'title': 'CRYPTO',
