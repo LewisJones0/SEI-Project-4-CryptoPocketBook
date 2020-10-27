@@ -54,8 +54,8 @@
 #sidebar-wrapper{
   position: fixed;
   color: #363A45;
+  width: 10vw;
   min-height: 100vh !important;
-  width: 100vw;
   margin-left: -1rem;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
@@ -96,9 +96,9 @@
 
 .WidgetRow {
   margin-top: 0.5%;
-  margin-left: 4%;
-  position: relative;
-  z-index: 9998;
+  padding-left: 4%;
+//   position: relative;
+
   padding-bottom: 1%;
 }
 
@@ -130,12 +130,12 @@
   color: white;
 }
 
-   /* Media queries */
-  @media screen and (max-width: 615px) {
-    .WidgetRow{
-      margin-left: 5%;
-    }
-    }
+  //  /* Media queries */
+  // @media screen and (max-width: 615px) {
+  //   .WidgetRow{
+  //     margin-left: 5%;
+  //   }
+  //   }
 
 
 
@@ -153,31 +153,31 @@
   //   // z-index: 9999;
   // }
 
-  .CreateFormRow {
-    margin-top: 0.5%;
-    margin-left: 4%;
-    position: relative;
-    z-index: 9998;
-    height: 845px;
-  }
+  // .CreateFormRow {
+  //   margin-top: 0.5%;
+  //   margin-left: 4%;
+  //   position: relative;
+  //   z-index: 9998;
+  //   height: 845px;
+  // }
 
-  .CreateSubAccount {
-    padding-right: 7%;
-    background-color: #363A45;
-    width: 30%;
-    margin: auto;
-  }
+  // .CreateSubAccount {
+  //   padding-right: 7%;
+  //   background-color: #363A45;
+  //   width: 30%;
+  //   margin: auto;
+  // }
 
-  @media screen and (max-width: 800px) {
-    .CreateSubAccount{
-      width: 50%;
-    }
-    .SAFormTitle {
-      height: 250px;
-    }
-    }
+  // @media screen and (max-width: 800px) {
+  //   .CreateSubAccount{
+  //     width: 50%;
+  //   }
+  //   .SAFormTitle {
+  //     height: 250px;
+  //   }
+  //   }
 
-
+  // CREATE SUB ACCOUNT
   .SAFormTitle {
     margin-top: 15%;
     height: 50px;
@@ -195,6 +195,8 @@
     margin-top: 2.5%;
   }
 
+
+  // SUBACCOUNT PAGE
   .transactionUppercase {
     text-transform: capitalize;
   }
@@ -203,6 +205,16 @@
     color: white;
   }
 
+  .CreateSubaccountRow {
+    margin-top: 0.75%;
+    margin-left: 5%;
+    position: relative;
+    height: 100%;
+  }
+
+  .SubACreationTable {
+    width: 85%;
+  }
   .AddTransButton {
-    margin: auto;
+    margin-bottom: 2.5%;
   }

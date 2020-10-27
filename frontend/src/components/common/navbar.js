@@ -26,7 +26,7 @@ class NavbarMaster extends React.Component {
 
   showModal1 = e => {
     this.setState({
-      show: true
+      show1: true
     })
   }
 

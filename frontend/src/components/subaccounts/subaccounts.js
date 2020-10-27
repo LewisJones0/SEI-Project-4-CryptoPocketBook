@@ -26,7 +26,7 @@ class Subaccount extends React.Component {
           <h1>Subaccounts</h1>
         </Container>
         <Row className="Dashboard">
-          <Col xs={12} md={12} xl={12} className="CreateFormRow">
+          <Col xs={12} md={12} xl={12} className="CreateSubaccountRow">
             { this.state.subaccounts.map(subaccount => (
               <SubaccountWidget
                 key={subaccount.id}

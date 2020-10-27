@@ -21,34 +21,39 @@ function TransactionMapping(transactions, name) {
   
 }
 
+class SubaccountWidget extends React.Component {
+  state = {
+    show: false
+  }
 
-const SubaccountWidget = ({ name, transactions }) => {
-  TransactionMapping(transactions)
-  return (
-    <>
-      <h4 className="CreateSubAccName">Subaccount Name: {name}</h4>
-      <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>Transaction</th>
-            <th>Currency</th>
-            <th>Amount Bought</th>
-            <th>Month Bought At</th>
-            <th>Price Bought At</th>
-          </tr>
-        </thead>
-        
-        <tbody>
-          { transactions.map(subaccount => (
-            <TransactionMapping
-              key={subaccount.id}
-              {...subaccount} />
-          )) }
-        </tbody>
-      </Table>
-      <Button className="AddTransButton">Add a transaction to {name}</Button>
-    </>
-  )
+  render() {
+    TransactionMapping(this.props.transactions)
+    return (
+      <>
+        <h4 className="CreateSubAccName">Subaccount Name: {this.props.name}</h4>
+        <Table className='SubACreationTable' striped bordered hover variant="dark">
+          <thead>
+            <tr>
+              <th>Transaction</th>
+              <th>Currency</th>
+              <th>Amount Bought</th>
+              <th>Month Bought At</th>
+              <th>Price Bought At</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            { this.props.transactions.map(subaccount => (
+              <TransactionMapping
+                key={subaccount.id}
+                {...subaccount} />
+            )) }
+          </tbody>
+        </Table>
+        <Button className="AddTransButton">Add a transaction to {this.props.name}</Button>
+      </>
+    )
+  }
 }
 
 export default SubaccountWidget

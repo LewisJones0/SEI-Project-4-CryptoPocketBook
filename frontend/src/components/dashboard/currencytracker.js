@@ -2,6 +2,8 @@ import React from 'react'
 import { getUser, getLiveData } from '../../lib/api'
 import { Table } from 'react-bootstrap'
 
+
+
 class CurrencyTracker extends React.Component {
   state = {
     transactions: [],
@@ -19,7 +21,7 @@ class CurrencyTracker extends React.Component {
     APIPriceETH: {},
     APIPriceLINK: {},
     APIPriceLTC: {},
-    // APIPriceYFI: {}
+    APIPriceYFI: {}
   }
 
   async componentDidMount() {
@@ -33,12 +35,16 @@ class CurrencyTracker extends React.Component {
       APIPriceETH: getMarketData.data.ethereum,
       APIPriceLINK: getMarketData.data.chainlink,
       APIPriceLTC: getMarketData.data.litecoin,
-      // APIPriceYFI: getMarketData.data.yfi
+      APIPriceYFI: getMarketData.data['yearn-finance']
     })
   }
   
-
+  
   render() {
+    const { transactions } = this.state
+
+
+
     return (
       <>
         <Table striped bordered hover variant="dark">
@@ -84,7 +90,7 @@ class CurrencyTracker extends React.Component {
               <td>YearnFinance</td>
               <td>INTERGER TOTAL</td>
               <td>INTERGER AVERAGE</td>
-              <td></td>
+              <td>{this.state.APIPriceYFI.usd}</td>
               <td>PnL</td>
             </tr>
           </tbody>
