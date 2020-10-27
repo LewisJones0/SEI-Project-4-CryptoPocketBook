@@ -27,3 +27,9 @@ export const newSub = formData => {
   return axios.post(`${baseUrl}/subaccount/`, formData, withHeaders())
 }
 
+// GET MARKET DATA 
+export const getLiveData = () => {
+  return axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Clitecoin%2Cchainlink%2Cethereum%2Cyearn-finance&vs_currencies=usd
+  `)
+}
+
