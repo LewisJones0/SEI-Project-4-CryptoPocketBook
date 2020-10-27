@@ -27,11 +27,11 @@ class Subaccount extends React.Component {
         </Container>
         <Row className="Dashboard">
           <Col xs={12} md={12} xl={12} className="CreateFormRow">
-            {/* { this.state.subaccountdetails.map(subaccount => (
+            { this.state.subaccounts.map(subaccount => (
               <SubaccountWidget
                 key={subaccount.id}
                 {...subaccount} />
-            )) } */}
+            )) }
           </Col>
         </Row>
       </>
