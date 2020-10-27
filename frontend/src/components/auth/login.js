@@ -29,13 +29,14 @@ class Login extends React.Component {
       console.log(response)
       setToken(response.data.token)
       this.props.history.push('/dashboard')
-      this.props.closeModal(this.state.show)
-      this.setState({ show: false })
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
     }
   }
 
+  closeLogin = () => {
+    this.props.closeModal()
+  }
 
   render() {
     const { email, password } = this.state.formData
@@ -47,7 +48,8 @@ class Login extends React.Component {
         <Container className="login-reg-wrapper">
           <Row>
             <Col className="login-reg-section">
-              <h3>Sign in</h3>
+              <div className='homepage-form'><h3>Sign in</h3>
+                <Button onClick={this.closeLogin}>X</Button></div>
               <div className='loginForm'>
                 <Form onSubmit={this.handleSubmit}>
                   <Form.Group as={Row} controlId="formBasicEmail">

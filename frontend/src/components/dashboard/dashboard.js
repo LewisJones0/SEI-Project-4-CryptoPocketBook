@@ -1,6 +1,6 @@
 import React from 'react'
 import { getUser } from '../../lib/api'
-import { Container, Card, Grid, Col, Row } from 'react-bootstrap'
+import { Container, Card, Col, Row } from 'react-bootstrap'
 import Widget from './tradingview'
 // import LineChart from '../d3/linechart'
 import CurrencyTracker from './currencytracker'

@@ -35,7 +35,11 @@
   padding: 5%;
 }
 
-
+.homepage-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5%;
+}
 
 
 // SIDE BAR NAVIGATION
@@ -207,7 +211,7 @@
 
   .CreateSubaccountRow {
     margin-top: 0.75%;
-    margin-left: 5%;
+    padding-left: 5%;
     position: relative;
     height: 100%;
   }

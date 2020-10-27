@@ -1,5 +1,4 @@
 import React from 'react'
-import { getUser } from '../../lib/api'
 import { Container, Card, Col, Row, Button, Form } from 'react-bootstrap'
 import { newSub } from '../../lib/api'
 

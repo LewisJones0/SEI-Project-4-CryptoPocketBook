@@ -3,14 +3,13 @@ import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav'
 import { withRouter } from 'react-router-dom'
 import { logoutID, logoutToken } from '../../lib/auth'
 import { Book, Power, Receipt, Plus } from 'react-bootstrap-icons'
-import { getUser } from '../../lib/api'
 import '../../styles/sidenav.scss'
 
 class Sidebar extends React.Component {
   state = {
     show: false
   }
-  
+
   showModal = e => {
     this.setState({
       show: true

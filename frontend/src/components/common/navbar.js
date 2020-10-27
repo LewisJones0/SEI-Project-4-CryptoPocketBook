@@ -1,15 +1,14 @@
 import React from 'react'
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
+import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import { logoutToken, isAuthenticated } from '../../lib/auth'
 import Login from '../auth/login'
-import Register from '../auth/login'
+import Register from '../auth/register'
 import Sidebar from './sidebar.js'
 
 class NavbarMaster extends React.Component {
   state = {
-    show: false,
-    show1: false
+    show: false
   }
 
   showModal = e => {
@@ -24,24 +23,12 @@ class NavbarMaster extends React.Component {
     })
   }
 
-  showModal1 = e => {
-    this.setState({
-      show1: true
-    })
-  }
-
-  closeModal1 = e => {
-    this.setState({
-      show1: false
-    })
-  }
-
-
   handleLogout = () => {
     logoutToken()
   }
 
   render() {
+    const { show } = this.state
     return (
       <>
         { !isAuthenticated() && 
@@ -52,15 +39,15 @@ class NavbarMaster extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {!isAuthenticated() && <button onClick={e => {
+            {!isAuthenticated() && <Button onClick={e => {
               this.showModal()
-            }}>Login</button>}
-            <Login show={this.state.show} closeModal={this.closeModal}/>
-
-            {!isAuthenticated() && <button onClick={e => {
-              this.showModal1()
-            }}>Register</button>}
-            <Register show1={this.state.show1} closeModal1={this.closeModal1}/>
+            }}>Login</Button>}
+            <Login show={show} closeModal={this.closeModal}/>
+            
+            {!isAuthenticated() && <Button onClick={e => {
+              this.showModal()
+            }}>Register</Button>}
+            <Register show={show} closeModal={this.closeModal}/>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -41,7 +41,7 @@ class CurrencyTracker extends React.Component {
   
   
   render() {
-    const { transactions } = this.state
+    // const { transactions } = this.state
 
 
 
