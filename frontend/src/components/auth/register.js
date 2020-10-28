@@ -37,9 +37,9 @@ class Register extends React.Component {
       this.setState({ errors: err.response.data.errors })
     }
   }
-
-  closeLogin = () => {
-    this.props.closeModal1()
+  
+  closeRegister = () => {
+    this.props.closeModal()
   }
 
 
@@ -47,9 +47,9 @@ class Register extends React.Component {
     const { username, email, password, password_confirmation } = this.state.formData
     return (
       <>
-        <Modal show={true}>
+        <Modal show={this.props.isOpen}>
           <div className='homepage-form'><h3>Register</h3>
-            <Button onClick={this.closeLogin}>X</Button></div>
+            <Button onClick={this.closeRegister}>X</Button></div>
           <Col className="login-reg-section">
             <div className="registerForm">
               <Form onSubmit={ this.handleSubmit }>

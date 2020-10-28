@@ -1,6 +1,5 @@
 import React from 'react'
-import Modal from 'react-bootstrap/Modal'
-import { Form, Button, Container, Row, Col } from 'react-bootstrap'
+import { Form, Button, Container, Row, Col, Modal } from 'react-bootstrap'
 import { loginUser } from '../../lib/api'
 import { setToken } from '../../lib/auth'
 
@@ -35,16 +34,16 @@ class Login extends React.Component {
   }
 
   closeLogin = () => {
-    this.props.closeModal()
+    this.props.closeModalLogin()
   }
 
   render() {
     const { email, password } = this.state.formData
-    if (!this.props.show) {
-      return null
-    }
+    // if (!this.props.show) {
+    //   return null
+    // }
     return (
-      <Modal show={true}>
+      <Modal show={this.props.isOpenn}>
         <Container className="login-reg-wrapper">
           <Row>
             <Col className="login-reg-section">

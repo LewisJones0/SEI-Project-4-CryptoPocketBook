@@ -20,6 +20,15 @@ class Subaccount extends React.Component {
 
 
   render() {
+    if (Object.keys(this.state.subaccounts).length === 0) {
+      return (
+        <>
+          <Container fluid className="pocketbook-banner">
+            <h1>No accounts</h1>
+          </Container>
+        </>
+      )
+    }
     return (
       <>
         <Container fluid className="pocketbook-banner">
@@ -38,5 +47,6 @@ class Subaccount extends React.Component {
     )
   }
 }
+
 
 export default Subaccount

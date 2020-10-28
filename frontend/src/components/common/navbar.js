@@ -8,33 +8,16 @@ import Sidebar from './sidebar.js'
 
 class NavbarMaster extends React.Component {
   state = {
-    show: false,
-    show1: false
+    isOpen: false,
+    isOpenn: false
   }
 
-  showModal = e => {
-    this.setState({
-      show: true
-    })
-  }
+  openModal = () => this.setState({ isOpen: true })
+  closeModal = () => this.setState({ isOpen: false })
 
-  closeModal = e => {
-    this.setState({
-      show: false
-    })
-  }
+  openModaln = () => this.setState({ isOpenn: true })
+  closeModalLogin = () => this.setState({ isOpenn: false })
 
-  // showModal1 = e => {
-  //   this.setState({
-  //     show1: true
-  //   })
-  // }
-
-  // closeModal1 = e => {
-  //   this.setState({
-  //     show1: false
-  //   })
-  // }
 
   handleLogout = () => {
     logoutToken()
@@ -52,20 +35,12 @@ class NavbarMaster extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Button onClick={e => {
-              this.showModal()
-            }}>Login</Button>
-            <Login show={show} closeModal={this.closeModal}/>
+            <Button onClick={this.openModaln}>Login</Button>
+            <Login isOpenn={this.state.isOpenn} closeModalLogin={this.closeModalLogin}/>
 
-            {/* <Button onClick={e => {
-              this.showModal()
-            }}>Register</Button>
-            <Register show={show} closeModal={this.closeModal}/> */}
+            <Button onClick={this.openModal}>Register</Button>
+            <Register isOpen={this.state.isOpen} closeModal={this.closeModal}/>
 
-            {/* <Button onClick={e => {
-              this.showModal1()
-            }}>Register</Button>
-            <Register show1={show1} closeModal1={this.closeModal1}/> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

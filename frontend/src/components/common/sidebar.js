@@ -4,23 +4,16 @@ import { withRouter } from 'react-router-dom'
 import { logoutID, logoutToken } from '../../lib/auth'
 import { Book, Power, Receipt, Plus } from 'react-bootstrap-icons'
 import '../../styles/sidenav.scss'
+import SubaccountCreate from '../subaccounts/subaccountcreate'
+// import Button from 'react-bootstrap'
 
 class Sidebar extends React.Component {
   state = {
-    show: false
+    isOpen: false
   }
 
-  showModal = e => {
-    this.setState({
-      show: true
-    })
-  }
-
-  closeModal = e => {
-    this.setState({
-      show: false
-    })
-  }
+  openModal = () => this.setState({ isOpen: true })
+  closeModal = () => this.setState({ isOpen: false })
 
   handleLogout = () => {
     logoutID()
@@ -30,10 +23,6 @@ class Sidebar extends React.Component {
 
   handleSubaccount = () => {
     this.props.history.push('/subaccount')
-  }
-
-  handleSubaccountCreation = () => {
-    this.props.history.push('/create/')
   }
 
   handleDashboard = () => {
@@ -64,15 +53,17 @@ class Sidebar extends React.Component {
             </NavText>
           </NavItem>
 
-          <NavItem eventKey="createSub" onClick={this.handleSubaccountCreation}>
-            <NavIcon onClick={this.handleSubaccountCreation} >
-              <Plus className="DashboardIcons" size={30} onClick={this.handleSubaccountCreation}/>
+          <NavItem eventKey="createSub" onClick={this.openModal}>
+            <NavIcon onClick={this.openModal} >
+              <Plus className="DashboardIcons" size={30} onClick={this.openModal}/>
               <i className="fa fa-fw fa-createSub" style={{ fontSize: '1.75em' }} />
             </NavIcon>
-            <NavText onClick={this.handleSubaccountCreation}>
+            <NavText onClick={this.openModal}>
                 New Subaccount
             </NavText>
           </NavItem>
+
+          <SubaccountCreate isOpen={this.state.isOpen} closeModal={this.closeModal}/>
 
           <br></br>
 

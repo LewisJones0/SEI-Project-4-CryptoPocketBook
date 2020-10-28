@@ -22,43 +22,39 @@ class transaction(models.Model):
         default=Bitcoin,
     )
 
-    Jan = 'Jan'
-    Feb = 'Feb'
-    Mar = 'Mar'
-    Apr = 'Apr'
+    January = 'January'
+    February = 'February'
+    March = 'March'
+    April = 'April'
     May = 'May'
-    Jun = 'Jun'
+    June = 'June'
     July = 'July'
-    Aug = 'Aug'
-    Sep = 'Sep'
-    Oct = 'Oct'
-    Nov = 'Nov'
-    Dec = 'Dec'
-
+    August = 'August'
+    September = 'September'
+    October = 'October'
+    November = 'November'
+    December = 'December'
     MONTH_CHOICES = [
-        (Jan, 'Jan'),
-        (Feb, 'Feb'),
-        (Mar, 'Mar'),
-        (Apr, 'Apr'),
+        (January, 'January'),
+        (February, 'February'),
+        (March, 'March'),
+        (April, 'April'),
         (May, 'May'),
-        (Jun, 'Jun'),
+        (June, 'June'),
         (July, 'July'),
-        (Aug, 'Aug'),
-        (Sep, 'Sep'),
-        (Oct, 'Oct'),
-        (Nov, 'Nov'),
-        (Dec, 'Dec'),
+        (August, 'August'),
+        (September, 'September'),
+        (October, 'October'),
+        (November, 'November'),
+        (December, 'December'),
     ]
 
-    date_bought_at = models.CharField (
-        max_length=4,
+    month_bought_at = models.CharField (
+        max_length=9,
         choices=MONTH_CHOICES,
     )
-    amount_bought = models.PositiveIntegerField()
-    price_bought_at = models.PositiveIntegerField()
-    # date_bought_at = models.DateField(default=datetime.now)
-
-
+    amount_bought = models.DecimalField(decimal_places=18, max_digits=36)
+    price_bought_at = models.DecimalField(decimal_places=18, max_digits=36)
     subaccountowner = models.ForeignKey(
         'subaccount.subaccount',
         related_name="transactions",
