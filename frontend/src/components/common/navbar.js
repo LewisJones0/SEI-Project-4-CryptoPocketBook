@@ -8,7 +8,8 @@ import Sidebar from './sidebar.js'
 
 class NavbarMaster extends React.Component {
   state = {
-    show: false
+    show: false,
+    show1: false
   }
 
   showModal = e => {
@@ -23,12 +24,24 @@ class NavbarMaster extends React.Component {
     })
   }
 
+  // showModal1 = e => {
+  //   this.setState({
+  //     show1: true
+  //   })
+  // }
+
+  // closeModal1 = e => {
+  //   this.setState({
+  //     show1: false
+  //   })
+  // }
+
   handleLogout = () => {
     logoutToken()
   }
 
   render() {
-    const { show } = this.state
+    const { show, show1 } = this.state
     return (
       <>
         { !isAuthenticated() && 
@@ -39,15 +52,20 @@ class NavbarMaster extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {!isAuthenticated() && <Button onClick={e => {
+            <Button onClick={e => {
               this.showModal()
-            }}>Login</Button>}
+            }}>Login</Button>
             <Login show={show} closeModal={this.closeModal}/>
-            
-            {!isAuthenticated() && <Button onClick={e => {
+
+            {/* <Button onClick={e => {
               this.showModal()
-            }}>Register</Button>}
-            <Register show={show} closeModal={this.closeModal}/>
+            }}>Register</Button>
+            <Register show={show} closeModal={this.closeModal}/> */}
+
+            {/* <Button onClick={e => {
+              this.showModal1()
+            }}>Register</Button>
+            <Register show1={show1} closeModal1={this.closeModal1}/> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -33,3 +33,7 @@ export const getLiveData = () => {
   `)
 }
 
+// SUBMIT TRANSACTION
+export const submitTransaction = formData => {
+  return axios.post(`${baseUrl}/transaction/`, formData, withHeaders())
+}

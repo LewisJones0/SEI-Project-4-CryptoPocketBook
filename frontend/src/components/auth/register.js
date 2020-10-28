@@ -39,7 +39,7 @@ class Register extends React.Component {
   }
 
   closeLogin = () => {
-    this.props.closeModal()
+    this.props.closeModal1()
   }
 
 

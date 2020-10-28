@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table, Button } from 'react-bootstrap'
+import NewTransaction from './addtransactionModal'
 
 function TransactionMapping(transactions, name) {
   if (Object.keys(transactions).length > 0) { 
@@ -26,6 +27,21 @@ class SubaccountWidget extends React.Component {
     show: false
   }
 
+  showModal = e => {
+    this.setState({
+      show: true
+    })
+  }
+
+  closeModal = e => {
+    this.setState({
+      show: false
+    })
+  }
+
+
+
+
   render() {
     TransactionMapping(this.props.transactions)
     return (
@@ -50,7 +66,10 @@ class SubaccountWidget extends React.Component {
             )) }
           </tbody>
         </Table>
-        <Button className="AddTransButton">Add a transaction to {this.props.name}</Button>
+        <Button onClick={e => {
+          this.showModal()
+        }} className="AddTransButton">Add a transaction to {this.props.name}</Button>
+        <NewTransaction show={this.state.show} closeModal={this.closeModal} subaccountowner={this.props.id}/>
       </>
     )
   }
