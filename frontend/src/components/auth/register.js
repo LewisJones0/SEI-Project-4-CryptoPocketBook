@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import { Form, Button, Row, Col, Modal } from 'react-bootstrap'
+import { Form, Button, Row, Col, Modal, Container } from 'react-bootstrap'
 import { registerUser } from '../../lib/api'
 import { withRouter } from 'react-router-dom'
 
@@ -48,10 +48,12 @@ class Register extends React.Component {
     return (
       <>
         <Modal show={this.props.isOpen}>
-          <div className='homepage-form'><h3>Register</h3>
+        <Container className="modalMaster">
+          <Row>
+        <Col className="login-reg-section">
+          <div className='modalForm'><h3>Register</h3>
             <Button onClick={this.closeRegister}>X</Button></div>
-          <Col className="login-reg-section">
-            <div className="registerForm">
+            <div className="loginForm">
               <Form onSubmit={ this.handleSubmit }>
                 <Form.Group as={Row} controlId="formBasicUsername">
                   <Form.Label column sm={4}>Username</Form.Label>
@@ -109,6 +111,8 @@ class Register extends React.Component {
               </Form>
             </div>
           </Col>
+          </Row>
+          </Container>
         </Modal>
       </>
     )

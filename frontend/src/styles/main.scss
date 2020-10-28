@@ -1,4 +1,4 @@
-// HOME
+// HOME //
 .jumbotron {
   background-image: url("../images/backgroundimghome.jpg");
   background-color: #363A45;
@@ -9,36 +9,85 @@
   height: 100vh;
   position: relative;
 }
-//Homepage background
+//HOMEPAGE BACKGROUND
 .hero {
-  background-image: url("../images/backgroundimghome.jpg");
+  background-color: #363A45;
+  margin-top: 5%;
+  padding-top: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   color: white;
-  height: 50%;
+  height: 65%;
+  width: 50%;
+
+}
+
+// HOMEPAGE TEXT
+.HomeTitleH1 {
+  font-size: 2.5em;
   display: flex;
   justify-content: center;
 }
 
-//Navbar
-.color-nav {
-  background-color: #363A45;
-}
-//Navbar Text
-.a.navbar-brand {
-  color: white;
+.HomeTitleH1 {
+  display: flex;
+  justify-content: center;
 }
 
-//LOGIN
-.login-reg-wrapper {
+  @media screen and (max-width: 1250px) {
+    .HomeTitleH1{
+      font-size: 1em;
+    }
+    .HomeTitleH2{
+      font-size: 1em;
+    }
+    .hero {
+      height: 50%;
+    }
+  }
+
+
+
+// NAVBAR //
+
+.navbarMaster {
+  background-color: #363A45;
+  height: 100px;
+}
+
+//Navbar Text (Title)
+.navbarText.navbar-brand {
+  color: white;
+  margin-left: 15%;
+  font-size: 35px;
+}
+
+.mr-auto {
+  margin-left: 50%;
+}
+
+@media screen and (max-width: 1150px) {
+  .navbarText.navbar-brand{
+    font-size: 1em;
+  }
+}
+
+//MODALS
+.modalMaster {
+  background-color: #363A45;
+  color: white;
   height: 25%;
-  display: flex;
-  align-items: center;
   padding: 5%;
 }
 
-.homepage-form {
+.modalForm {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2.5%;
+}
+
+Button {
+  margin: 5px;
 }
 
 
@@ -84,6 +133,26 @@
   margin-left: 20%;
 }
 
+// GLOBAL BANNERS
+
+.pocketbook-banner {
+  margin-left: 0.75%;
+  width: 100%;
+  height: 150px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/backgroundimghome.jpg');
+  background-size: auto;
+  background-position: bottom;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.pocketbookBannerH1 {
+  padding-top: 2%;
+  font-size: 50px;
+}
+
+
 // Dashboard
 
 
@@ -122,17 +191,7 @@
   background-color: #363A45;
 }
 
-.pocketbook-banner {
-  margin-left: 0.75%;
-  width: 100%;
-  height: 100px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/backgroundimghome.jpg');
-  background-size: auto;
-  background-position: bottom;
-  position: relative;
-  text-align: center;
-  color: white;
-}
+
 
   //  /* Media queries */
   // @media screen and (max-width: 615px) {

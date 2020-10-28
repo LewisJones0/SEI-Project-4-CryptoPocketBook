@@ -6,7 +6,13 @@ const Home = () => {
   return (
     <Jumbotron fluid>
       <Container className="hero"> 
-      About section
+        <h1 className='HomeTitleH1'>What is Crypto Pocket-Book?</h1>
+        <br></br>
+        <h2 className='HomeTitleH2'>Crypto Pocket-Book is a online application that enables you to track the total amount of cryptocurrencies that you have across multiple platforms. 
+          <br></br>
+          <br></br>
+          
+        It also enables you to see the total cost of your investment and it calculates your total profits based upon the assets current price.</h2>
       </Container>
     </Jumbotron>
   )

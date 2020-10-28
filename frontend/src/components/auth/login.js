@@ -44,10 +44,10 @@ class Login extends React.Component {
     // }
     return (
       <Modal show={this.props.isOpenn}>
-        <Container className="login-reg-wrapper">
+        <Container className="modalMaster">
           <Row>
             <Col className="login-reg-section">
-              <div className='homepage-form'><h3>Sign in</h3>
+              <div className='modalForm'><h3>Sign in</h3>
                 <Button onClick={this.closeLogin}>X</Button></div>
               <div className='loginForm'>
                 <Form onSubmit={this.handleSubmit}>

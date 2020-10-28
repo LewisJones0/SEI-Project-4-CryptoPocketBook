@@ -12,16 +12,21 @@ class CurrencyTracker extends React.Component {
     chainlinkTotalAmt: '',
     litecoinTotalAmt: '',
     yearnfinanceTotalAmt: '',
-    bitcoinTotalSpetCalc: '',
-    ethereumTotalSpetCalc: '',
-    chainlinkTotalSpetCalc: '',
-    litecoinTotalSpetCalc: '',
-    yearnfinanceTotalSpetCalc: '',
-    APIPriceBTC: {},
-    APIPriceETH: {},
-    APIPriceLINK: {},
-    APIPriceLTC: {},
-    APIPriceYFI: {}
+    bitcoinTotalSpentCalc: '',
+    ethereumTotalSpentCalc: '',
+    chainlinkTotalSpentCalc: '',
+    litecoinTotalSpentCalc: '',
+    yearnfinanceTotalSpentCalc: '',
+    APIPriceBTC: '',
+    APIPriceETH: '',
+    APIPriceLINK: '',
+    APIPriceLTC: '',
+    APIPriceYFI: '',
+    btcProfit: '',
+    ethProfit: '',
+    linkProfit: '',
+    ltcProfit: '',
+    yfiProfit: ''
   }
 
   async componentDidMount() {
@@ -32,11 +37,11 @@ class CurrencyTracker extends React.Component {
 
     this.setState({
       transactions: getData.data.owner_transactions,
-      APIPriceBTC: getMarketData.data.bitcoin,
-      APIPriceETH: getMarketData.data.ethereum,
-      APIPriceLINK: getMarketData.data.chainlink,
-      APIPriceLTC: getMarketData.data.litecoin,
-      APIPriceYFI: getMarketData.data['yearn-finance']
+      APIPriceBTC: getMarketData.data.bitcoin.usd,
+      APIPriceETH: getMarketData.data.ethereum.usd,
+      APIPriceLINK: getMarketData.data.chainlink.usd,
+      APIPriceLTC: getMarketData.data.litecoin.usd,
+      APIPriceYFI: getMarketData.data['yearn-finance'].usd
     })
     const btcTotalCalc = this.totalAmountBought('bitcoin')
     const ethTotalCalc = this.totalAmountBought('ethereum')
@@ -50,17 +55,29 @@ class CurrencyTracker extends React.Component {
       litecoinTotalAmt: ltcTotalCalc,
       yearnfinanceTotalAmt: yfiTotalCalc
     })
-    const btcTotalSpetCalc = this.totalPriceBoughtAt('bitcoin')
-    const ethTotalSpetCalc = this.totalPriceBoughtAt('ethereum')
-    const linkTotalSpetCalc = this.totalPriceBoughtAt('chainlink')
-    const ltcTotalSpetCalc = this.totalPriceBoughtAt('litecoin')
-    const yfiTotalSpetCalc = this.totalPriceBoughtAt('yearnfinance')
+    const btcTotalSpentCalc = this.totalPriceBoughtAt('bitcoin')
+    const ethTotalSpentCalc = this.totalPriceBoughtAt('ethereum')
+    const linkTotalSpentCalc = this.totalPriceBoughtAt('chainlink')
+    const ltcTotalSpentCalc = this.totalPriceBoughtAt('litecoin')
+    const yfiTotalSpentCalc = this.totalPriceBoughtAt('yearnfinance')
     this.setState({
-      bitcoinTotalSpetCalc: btcTotalSpetCalc,
-      ethereumTotalSpetCalc: ethTotalSpetCalc,
-      chainlinkTotalSpetCalc: linkTotalSpetCalc,
-      litecoinTotalSpetCalc: ltcTotalSpetCalc,
-      yearnfinanceTotalSpetCalc: yfiTotalSpetCalc
+      bitcoinTotalSpentCalc: btcTotalSpentCalc,
+      ethereumTotalSpentCalc: ethTotalSpentCalc,
+      chainlinkTotalSpentCalc: linkTotalSpentCalc,
+      litecoinTotalSpentCalc: ltcTotalSpentCalc,
+      yearnfinanceTotalSpentCalc: yfiTotalSpentCalc
+    })
+    const btcProfit = this.profitAndLossCalc(this.state.APIPriceBTC, this.state.bitcoinTotalSpentCalc, this.state.bitcoinTotalAmt)
+    const ethProfit = this.profitAndLossCalc(this.state.APIPriceETH, this.state.ethereumTotalSpentCalc, this.state.ethereumTotalAmt)
+    const linkProfit = this.profitAndLossCalc(this.state.APIPriceLINK, this.state.chainlinkTotalSpentCalc, this.state.chainlinkTotalAmt)
+    const ltcProfit = this.profitAndLossCalc(this.state.APIPriceLTC, this.state.litecoinTotalSpentCalc, this.state.litecoinTotalAmt)
+    const yfiProfit = this.profitAndLossCalc(this.state.APIPriceYFI, this.state.yearnfinanceTotalSpentCalc, this.state.yearnfinanceTotalAmt)
+    this.setState({
+      btcProfit: btcProfit,
+      ethProfit: ethProfit,
+      linkProfit: linkProfit,
+      ltcProfit: ltcProfit,
+      yfiProfit: yfiProfit
     })
   }
 
@@ -82,12 +99,9 @@ class CurrencyTracker extends React.Component {
       return total
     }
 
-    profitAndLossCalc = (currency) => {
-      const filtered = this.state.transactions.filter(transaction => transaction.currency === currency)
-      let total = 0
-      for (let i = 0; i < filtered.length; i++) {
-        total += parseFloat(filtered[i].price_bought_at)
-      } 
+    profitAndLossCalc = (APIPrice, coinTotalSpent, totalCurrencyOwnership) => {
+      var currentTotalValue = totalCurrencyOwnership *= APIPrice
+      const total = currentTotalValue -= coinTotalSpent
       return total
     }
   
@@ -109,37 +123,37 @@ class CurrencyTracker extends React.Component {
               <tr>
                 <td>Bitcoin</td>
                 <td>{this.state.bitcoinTotalAmt}</td>
-                <td>{this.state.bitcoinTotalSpetCalc}</td>
-                <td>{this.state.APIPriceBTC.usd}</td>
-                <td>PnL</td>
+                <td>$ {this.state.bitcoinTotalSpentCalc}</td>
+                <td>$ {this.state.APIPriceBTC}</td>
+                <td>$ {this.state.btcProfit}</td>
               </tr>
               <tr>
                 <td>Ethereum</td>
                 <td>{this.state.ethereumTotalAmt}</td>
-                <td>{this.state.ethereumTotalSpetCalc}</td>
-                <td>{this.state.APIPriceETH.usd}</td>
-                <td>PnL</td>
+                <td>$ {this.state.ethereumTotalSpentCalc}</td>
+                <td>$ {this.state.APIPriceETH}</td>
+                <td>$ {this.state.ethProfit}</td>
               </tr>
               <tr>
                 <td>ChainLink</td>
                 <td>{this.state.chainlinkTotalAmt}</td>
-                <td>{this.state.chainlinkTotalSpetCalc}</td>
-                <td>{this.state.APIPriceLINK.usd}</td>
-                <td>PnL</td>
+                <td>$ {this.state.chainlinkTotalSpentCalc}</td>
+                <td>$ {this.state.APIPriceLINK}</td>
+                <td>$ {this.state.linkProfit}</td>
               </tr>
               <tr>
                 <td>Litecoin</td>
                 <td>{this.state.litecoinTotalAmt}</td>
-                <td>{this.state.litecoinTotalSpetCalc}</td>
-                <td>{this.state.APIPriceLTC.usd}</td>
-                <td>PnL</td>
+                <td>$ {this.state.litecoinTotalSpentCalc}</td>
+                <td>$ {this.state.APIPriceLTC}</td>
+                <td>$ {this.state.ltcProfit}</td>
               </tr>
               <tr>
                 <td>YearnFinance</td>
                 <td>{this.state.yearnfinanceTotalAmt}</td>
-                <td>{this.state.yearnfinanceTotalSpetCalc}</td>
-                <td>{this.state.APIPriceYFI.usd}</td>
-                <td>PnL</td>
+                <td>$ {this.state.yearnfinanceTotalSpentCalc}</td>
+                <td>$ {this.state.APIPriceYFI}</td>
+                <td>$  {this.state.yfiProfit}</td>
               </tr>
             </tbody>
           </Table>

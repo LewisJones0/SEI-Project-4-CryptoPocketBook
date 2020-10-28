@@ -24,12 +24,11 @@ class NavbarMaster extends React.Component {
   }
 
   render() {
-    const { show, show1 } = this.state
     return (
       <>
         { !isAuthenticated() && 
-      <Navbar className="color-nav" expand="lg">
-        <Navbar.Brand href="/">
+      <Navbar className="navbarMaster" expand="lg">
+        <Navbar.Brand className='navbarText' href="/">
           Crypto Pocketbook
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

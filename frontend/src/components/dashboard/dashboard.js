@@ -27,7 +27,7 @@ class Dashboard extends React.Component {
     return (
       <>
         <Container fluid className="pocketbook-banner">
-          <h1>Dashboard</h1>
+          <h1 className='pocketbookBannerH1'>Dashboard</h1>
         </Container>
         <Row className="Dashboard">
           <Col xs={6} md={6} xl={12} className="WidgetRow">
