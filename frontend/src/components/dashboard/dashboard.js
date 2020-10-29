@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
           <h1 className='pocketbookBannerH1'>Dashboard</h1>
         </Container>
         <Row className="DashboardMain">
-          <Col xs={12} md={12} xl={6} className="WidgetColumn">
+          <Col xs={12} md={12} xl={12} className="WidgetColumn">
             <Card className="CurrencyTracker">
               <CurrencyTracker />
             </Card>

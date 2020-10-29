@@ -172,35 +172,32 @@ Button {
   height: 1000px;
 }
 
-
-// .WidgetContainer {
-//   width: 35%;
-// }
-
 .WidgetRow {
   display: flex;
-  margin-top: 0.5%;
-  padding-left: 4%;
+  margin-top: 3%;
   padding-bottom: 1%;
 }
 
-// .Dashboard {
-//   background-color: #363A45;
-//   height: 100%;
-// }
+.CurrencyTracker {
+  margin-top: 5%;
+  margin-left: 7.5%;
+  margin-right: 5%;
+  background-color: #363A45;
+}
 
-// .CurrencyTracker {
-//   margin-left: 5%;
-//   margin-right: 10%;
-//   background-color: #363A45;
-// }
+@media screen and (min-width: 1650px) {
+  .WidgetColumn{
+    display: flex;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1650px) {
+  .WidgetRow {
+    margin-left: 15%;
+  }
+}
 
-// @media screen and (min-width: 1650px) {
-//   .WidgetColumn{
-//     display: flex;
-//     width: 100%;
-//   }
-// }
+
 
   // CREATE SUB ACCOUNT
   .SAFormTitle {

@@ -15,7 +15,7 @@ export default function Widget() {
           showChart: true,
           isTransparent: false,
           showSymbolLogo: true,
-          width: '95%',
+          width: '150%',
           height: '550',
           tabs: [
             {
