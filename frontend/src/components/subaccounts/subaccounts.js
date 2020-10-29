@@ -1,20 +1,18 @@
 import React from 'react'
 import { getUser } from '../../lib/api'
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container, Col, Row, Jumbotron } from 'react-bootstrap'
 import SubaccountWidget from './subaccountwidget'
 
 class Subaccount extends React.Component {
   state = {
-    subaccounts: [],
-    subaccountdetails: []
+    subaccounts: []
   }
 
   async componentDidMount() {
     const getData = await getUser()
     console.log(getData)
     this.setState({
-      subaccounts: getData.data.subaccounts,
-      subaccountdetails: getData.data.subaccounts.transactions
+      subaccounts: getData.data.subaccounts
     })
   }
 
@@ -23,18 +21,24 @@ class Subaccount extends React.Component {
     if (Object.keys(this.state.subaccounts).length === 0) {
       return (
         <>
-          <Container fluid className="pocketbook-banner">
-            <h1>No accounts</h1>
-          </Container>
+          <Jumbotron fluid>
+            <Container className="subaccounthero"> 
+              <h1 className='subaccountTitleH1'>There are currently no Subaccounts attached to this username.</h1>
+              <br></br>
+              <h2 className='subaccountTitleH2'>Please press the '+' button on the left to create a Subaccount</h2>
+              <br></br>
+            </Container>
+          </Jumbotron>
         </>
       )
     }
     return (
       <>
         <Container fluid className="pocketbook-banner">
-          <h1>Subaccounts</h1>
+          <h1 className='pocketbookBannerH1'>Subaccounts</h1>
         </Container>
-        <Row className="Dashboard">
+        
+        <Row className="subaccountDashboard">
           <Col xs={12} md={12} xl={12} className="CreateSubaccountRow">
             { this.state.subaccounts.map(subaccount => (
               <SubaccountWidget

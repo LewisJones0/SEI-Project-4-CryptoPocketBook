@@ -11,11 +11,11 @@ export default function Widget() {
         widgetType={widgetType.MARKET_OVERVIEW}
         widgetConfig={{
           colorTheme: 'dark',
-          dateRange: '12M',
+          dateRange: '1M',
           showChart: true,
           isTransparent: false,
           showSymbolLogo: true,
-          width: '93%',
+          width: '95%',
           height: '550',
           tabs: [
             {

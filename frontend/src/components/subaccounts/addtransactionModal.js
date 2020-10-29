@@ -49,14 +49,13 @@ class NewTransaction extends React.Component {
     }
     return (
       <Modal show={true}>
-        <Container className="login-reg-wrapper">
+        <Container className="modalMaster">
           <Row>
             <Col className="login-reg-section">
-              <div className='homepage-form'><h3>New Transaction</h3>
+              <div className='modalForm'><h3>New Transaction</h3>
                 <Button onClick={this.closeNewTrans}>X</Button></div>
               <div className='loginForm'>
                 <Form onSubmit={this.handleSubmit}>
-                  
                   <Form.Group as={Row} controlId="exampleForm.ControlSelect1">
                     <Form.Label column sm={4}>Currency:</Form.Label>
                     <Col sm={8}>
