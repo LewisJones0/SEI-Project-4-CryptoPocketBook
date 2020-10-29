@@ -21,10 +21,6 @@ class Subaccount extends React.Component {
     if (Object.keys(this.state.subaccounts).length === 0) {
       return (
         <>
-          <Spinner animation="border" role="status">
-            <span className="sr-only">Loading...</span>
-          </Spinner>
-          
           <Jumbotron fluid>
             <Container className="subaccounthero"> 
               <h1 className='subaccountTitleH1'>There are currently no Subaccounts attached to this username.</h1>
