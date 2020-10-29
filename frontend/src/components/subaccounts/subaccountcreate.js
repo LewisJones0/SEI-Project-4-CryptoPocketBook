@@ -41,33 +41,30 @@ class SubaccountCreate extends React.Component {
     return (
       <>
         <Modal show={this.props.isOpen}>
-          <Container fluid className="pocketbook-banner">
-            <div className='homepage-form'><h3>Create Subaccount</h3>
-              <Button onClick={this.closeModal}>X</Button></div>
+          <Container className="modalMaster">
+            <Row>
+              <Col className="login-reg-section">
+                <div className='modalForm'><h3>Subaccount Name</h3>
+                  <Button onClick={this.closeModal}>X</Button></div>
+                <div className='loginForm'>
+                  <Form onSubmit={this.handleSubmit}>
+                    <Form.Group as={Row} controlId="">
+                      <Col sm={8}>
+                        <Form.Control 
+                          className='subaccountCreationFormTextBox'
+                          type="name" 
+                          placeholder="Input Subaccount name here" 
+                          name="name"
+                          value={name}
+                          onChange={this.handleChange}/>
+                      </Col>
+                    </Form.Group>
+                    <Button variant="danger" type="submit" className='subaccountCreationFormSubmitButton' block>Create</Button>
+                  </Form>
+                </div>
+              </Col>
+            </Row>
           </Container>
-          <Row className="Dashboard">
-            <Col xs={12} md={12} xl={12} className="CreateFormRow">
-              <Card className="CreateSubAccount">
-                <Form.Group as={Row} controlId="formBasicname">
-                  <Col sm={12}>
-                    <Form onSubmit={this.handleSubmit}>
-                      <Form.Label column sm={12} className='SAFormTitle'>
-                          Desired SubAccount Name
-                      </Form.Label>
-                      <Form.Control 
-                        className='SAFormControl'
-                        type="name" 
-                        placeholder="Input here"
-                        name="name"
-                        value={name}
-                        onChange={this.handleChange}/>
-                      <Button variant="danger" type="submit" block>Create Subaccount</Button>
-                    </Form>
-                  </Col>
-                </Form.Group>
-              </Card>
-            </Col>
-          </Row>
         </Modal>
       </>
     )
@@ -75,3 +72,4 @@ class SubaccountCreate extends React.Component {
 }
 
 export default withRouter(SubaccountCreate)
+

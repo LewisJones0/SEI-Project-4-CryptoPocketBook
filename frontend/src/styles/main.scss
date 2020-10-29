@@ -84,6 +84,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 2.5%;
+  margin-left: 1.5%;
 }
 
 Button {
@@ -120,7 +121,7 @@ Button {
 #sidebar-wrapper .sidebar-heading {
   color: #363A45;
   padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 #page-content-wrapper {
@@ -129,9 +130,23 @@ Button {
 }
 
 .DashboardIcons {
-  margin-bottom: 17.5%;
-  margin-left: 20%;
+  margin-bottom: 20%;
+  margin-left: 25%;
 }
+
+.sidenav---sidenav-toggle---1KRjR {
+  margin-bottom: 20%;
+  margin-left: 25%;
+}
+
+.subaccountCreationFormTextBox {
+  margin-left: 2%;
+  width: 155%;
+}
+
+// .subaccountCreationFormSubmitButton {
+  
+// }
 
 // GLOBAL BANNERS
 
@@ -170,8 +185,6 @@ Button {
 .WidgetRow {
   margin-top: 0.5%;
   padding-left: 4%;
-//   position: relative;
-
   padding-bottom: 1%;
 }
 
