@@ -31,11 +31,16 @@ class NewTransaction extends React.Component {
       console.log(response)
       this.props.history.push('/subaccount')
       this.props.closeModal(this.state.show)
+      this.refreshPage()
       this.setState({ show: false })
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
       console.log(err)
     }
+  }
+
+  refreshPage = () =>{
+    window.location.reload()
   }
 
   closeNewTrans = () => {

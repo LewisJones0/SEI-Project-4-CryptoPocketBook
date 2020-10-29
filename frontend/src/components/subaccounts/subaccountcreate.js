@@ -27,10 +27,16 @@ class SubaccountCreate extends React.Component {
       console.log(response)
       this.closeModal()
       this.props.history.push('/subaccount')
+      this.refreshPage()
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
     }
   }
+
+  refreshPage = () =>{
+    window.location.reload()
+  }
+
 
   closeModal = () => {
     this.props.closeModal()
