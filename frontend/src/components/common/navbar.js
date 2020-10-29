@@ -31,7 +31,7 @@ class NavbarMaster extends React.Component {
         <Navbar.Brand className='navbarText' href="/">
           Crypto Pocketbook
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar aria-controls="basic-navbar-nav" />
         <Nav className="mr-auto">
           <Button onClick={this.openModaln}>Login</Button>
           <Login isOpenn={this.state.isOpenn} closeModalLogin={this.closeModalLogin}/>
