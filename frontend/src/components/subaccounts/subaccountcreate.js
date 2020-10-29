@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Card, Col, Row, Button, Form, Modal } from 'react-bootstrap'
+import { Container, Col, Row, Button, Form, Modal } from 'react-bootstrap'
 import { newSub } from '../../lib/api'
 import { withRouter } from 'react-router-dom'
 

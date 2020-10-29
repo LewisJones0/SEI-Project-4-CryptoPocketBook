@@ -32,18 +32,15 @@ class NavbarMaster extends React.Component {
           Crypto Pocketbook
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Button onClick={this.openModaln}>Login</Button>
-            <Login isOpenn={this.state.isOpenn} closeModalLogin={this.closeModalLogin}/>
+        <Nav className="mr-auto">
+          <Button onClick={this.openModaln}>Login</Button>
+          <Login isOpenn={this.state.isOpenn} closeModalLogin={this.closeModalLogin}/>
 
-            <Button onClick={this.openModal}>Register</Button>
-            <Register isOpen={this.state.isOpen} closeModal={this.closeModal}/>
+          <Button onClick={this.openModal}>Register</Button>
+          <Register isOpen={this.state.isOpen} closeModal={this.closeModal}/>
 
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-        }
+        </Nav>
+      </Navbar>}
         { isAuthenticated() && 
         <Container fluid>
           <Row>

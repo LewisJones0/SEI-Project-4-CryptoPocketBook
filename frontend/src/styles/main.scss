@@ -17,26 +17,27 @@
   padding-left: 2.5%;
   padding-right: 2.5%;
   color: white;
-  height: 65%;
-  width: 50%;
+  height: 45%;
+  width: 40%;
 
 }
 
 // HOMEPAGE TEXT
 .HomeTitleH1 {
-  font-size: 2.5em;
+  font-size: 2em;
   display: flex;
   justify-content: center;
 }
 
-.HomeTitleH1 {
+.HomeTitleH2 {
+  font-size: 1.5em;
   display: flex;
   justify-content: center;
 }
 
   @media screen and (max-width: 1250px) {
     .HomeTitleH1{
-      font-size: 1em;
+      font-size: 1.5em;
     }
     .HomeTitleH2{
       font-size: 1em;
@@ -68,7 +69,7 @@
 
 @media screen and (max-width: 1150px) {
   .navbarText.navbar-brand{
-    font-size: 1em;
+    font-size: 1.5em;
   }
 }
 
@@ -169,7 +170,7 @@ Button {
 .DashboardMain {
   background-color: #363A45;
   margin: auto;
-  height: 1000px;
+  height: 100vh;
 }
 
 .WidgetRow {
@@ -231,7 +232,6 @@ Button {
     margin-top: 1%;
     padding-left: 10%;
     position: relative;
-    height: 100%;
   }
 
   .SubACreationTable {
@@ -243,7 +243,7 @@ Button {
   }
 
   .subaccountDashboard {
-    height: 100vh;
+    height: 100%;
     background-color: #363A45;
   }
 
