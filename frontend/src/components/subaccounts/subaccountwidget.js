@@ -54,7 +54,7 @@ class SubaccountWidget extends React.Component {
               <th>Currency</th>
               <th>Amount Bought</th>
               <th>Month Bought At</th>
-              <th>Price Bought At</th>
+              <th>Total Spent on Transaction</th>
             </tr>
           </thead>
           
