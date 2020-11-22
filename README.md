@@ -40,7 +40,10 @@ For the last project of the course, I wanted to work on a product that would hav
 
 This was the first project where I utilised Python and Django for the back-end. I found utilising Python to build relationships for the database and building API controllers alot harder than it was in the previous project where we used Node.js.
 
-Overall I am very happy with how this project has worked out. It is a functioning product and a user would be able to have useful information be outputted from 
+Overall I am very happy with how this project has worked out. It is a functioning product that a user would be able to gain useful information out of if they inputted their own data into it.
+
+Other features that I initially wanted to add were cuting during development. This was due to the amount of time it took me to work on core functionality. The two main other features I wanted to implement were PnL graphs and API's implementations to actual exchanges (so users could simply log into their exchange and my applications would automatically integrate their wallet data).
+
 
 
 
