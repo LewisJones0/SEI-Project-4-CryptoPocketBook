@@ -57,7 +57,7 @@ ____
 
 Challenges (The Crunch):
 
-Along side this success of the PnL calculator, came a large challenge that I was unable to refine given the time limit (See two code examples below).
+Along side the success of the PnL calculator came a large challenge that I was unable to refine given the time limit (See two code examples below).
 
 The code to calculate the total amount of an asset, the total price spent of the bought asset and the comparison against the API price is quite good. But the price to apply this code to each asset is extremely repetitive and not very scaleable. 
 
