@@ -50,7 +50,7 @@ ____
 
 Successes: 
 
-The biggest success of this project for me was how all of the different systems interacted together to produce a PnL price. On the backend - all of the systems transactions are located on one database. Each subaccount and transaction is associated to one user account. The data that is called to the front-end from the back-end compiles all user data into one api call. This makes totaling transaction data into one value easier. 
+The biggest success of this project for me was how all of the different systems interacted together to produce a PnL price. On the backend - all of the systems transactions are located on one database. Each subaccount and transaction is associated to one user account. The data that is called to the front-end from the back-end compiles all user data into one API call. This makes totaling transaction data into one value easier. 
 
 From there, there is a API call to a price tracking website (Coingecko) that brings the assets live price onto the frontend. The state of the PnL is calculated as the total spent minus the total value of the assets in the users possession.
 ____
