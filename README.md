@@ -48,14 +48,14 @@ ____
 
 # Successes, Challenges and Bugs
 
-Successes: 
+## Successes: 
 
 The biggest success of this project for me was how all of the different systems interacted together to produce a PnL price. On the backend - all of the systems transactions are located on one database. Each subaccount and transaction is associated to one user account. The data that is called to the front-end from the back-end compiles all user data into one API call. This makes totaling transaction data into one value easier. 
 
 From there, there is a API call to a price tracking website (Coingecko) that brings the assets live price onto the frontend. The state of the PnL is calculated as the total spent minus the total value of the assets in the users possession.
 ____
 
-Challenges (The Crunch):
+## Challenges - The Crunch:
 
 Along side the success of the PnL calculator came a large challenge that I was unable to refine given the time limit (See two code examples below).
 
@@ -67,8 +67,19 @@ Due to time constraints - I had to throw together what code I could to make this
 ![homepage](/readmepictures/codeexample.png)
 ## Code Example 2
 ![homepage](/readmepictures/codeexample2.png)
+__________
 
-____
+## Key Learnings 
+1. Executing plans on features I've never programmed before (Graphs) can invalidate the overarching plan of the project. This feature had to be scrapped in order for there to be a product at the end of the project week. Understanding that "this will take too long" is an importing skill to have during intensive projects with tight deadlines.
+2. Sometimes code needs to be developed quickly and refined at a later date. I realised this on the previous section (Challenges - The Crunch).
+
+## Future Features
+1. Adding graphs onto the dashboard page (Monthly charting PnL - I did take some time into researching D3 to create the graphs but I ended up scrapping the idea to preserve time)
+2. Two factor authentication on the users account.
+3. Profile details edit page - email & password alterations
+4. Hook up APIs of certain popular exchanges to be able to extract wallet data. (E.g. FTX, Binance, Coinbase, Kraken etc.)
+5. Refactoring code that was thrown together quickly to be more elegent and more readable.
+_______
 
 # Some Product Screenshots
 
