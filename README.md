@@ -70,7 +70,7 @@ Due to time constraints - I had to throw together what code I could to make this
 __________
 
 ## Key Learnings 
-1. Executing plans on features I've never programmed before (Graphs) can invalidate the overarching plan of the project. This feature had to be scrapped in order for there to be a product at the end of the project week. Understanding that "this will take too long" is an importing skill to have during intensive projects with tight deadlines.
+1. Executing plans on features I've never programmed before (Graphs) can invalidate the overarching plan of the project. This feature had to be scrapped in order for there to be a product at the end of the project week. Understanding that "this will take too long" is an import skill to have during intensive projects with tight deadlines.
 2. Sometimes code needs to be developed quickly and refined at a later date. I realised this on the previous section (Challenges - The Crunch).
 
 ## Future Features
